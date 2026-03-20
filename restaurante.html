@@ -36,16 +36,54 @@
 <body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
 
     <nav class="fixed w-full z-50 bg-brand-light/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold text-brand-accent">La Taquería.</a>
-            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold text-brand-dark/70">
-                <a href="#historia" class="hover:text-brand-accent transition-colors">Historia</a>
-                <a href="#menu" class="hover:text-brand-accent transition-colors">Menú</a>
-                <a href="#galeria" class="hover:text-brand-accent transition-colors">Galería</a>
-                <a href="#ubicacion" class="hover:text-brand-accent transition-colors">Ubicación</a>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
+            <a href="#" class="text-2xl font-serif font-bold text-brand-accent z-50">La Taquería.</a>
+            
+            <button id="menu-toggle" class="block md:hidden z-50 text-brand-dark hover:text-brand-accent focus:outline-none">
+                <i class="fa-solid fa-bars text-3xl"></i>
+            </button>
+            
+            <div id="menu-links" class="hidden absolute top-full left-0 w-full bg-brand-light md:bg-transparent md:static md:flex md:w-auto md:space-x-8 text-sm uppercase tracking-widest font-semibold text-brand-dark/70 md:border-none border-t border-gray-200 md:shadow-none shadow-lg md:py-0 py-4 md:px-0 px-6">
+                <a href="#historia" class="block py-3 border-b border-gray-100 md:border-none md:inline-block hover:text-brand-accent transition-colors menu-item">Historia</a>
+                <a href="#menu" class="block py-3 border-b border-gray-100 md:border-none md:inline-block hover:text-brand-accent transition-colors menu-item">Menú</a>
+                <a href="#galeria" class="block py-3 border-b border-gray-100 md:border-none md:inline-block hover:text-brand-accent transition-colors menu-item">Galería</a>
+                <a href="#ubicacion" class="block py-3 md:border-none md:inline-block hover:text-brand-accent transition-colors menu-item">Ubicación</a>
             </div>
         </div>
     </nav>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menuLinks = document.getElementById('menu-links');
+            var icon = this.querySelector('i');
+            
+            menuLinks.classList.toggle('hidden');
+            
+            // Cambiar icono de hamburguesa a X y viceversa
+            if (menuLinks.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+        
+        // Cerrar menú al hacer clic en un enlace (para celular)
+        var menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var menuLinks = document.getElementById('menu-links');
+                var icon = document.getElementById('menu-toggle').querySelector('i');
+                
+                if (!menuLinks.classList.contains('hidden')) {
+                    menuLinks.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 
     <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -54,7 +92,7 @@
         </div>
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center mt-16">
             <span class="uppercase tracking-[0.3em] text-white/80 text-sm mb-4 font-semibold"><i class="fa-solid fa-fire mr-2 text-brand-accent"></i>Tradición Viva</span>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 drop-shadow-lg leading-tight">
                 La Taquería Poblana
             </h1>
             <p class="text-lg md:text-xl text-white/90 font-light max-w-2xl leading-relaxed mb-8">
@@ -189,17 +227,17 @@
         </div>
     </section>
 
-    <footer class="bg-[#111] text-brand-light py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+    <footer class="bg-[#111] text-brand-light py-12 border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
             
-            <div class="mb-6 md:mb-0">
-                <h2 class="text-2xl font-serif font-bold text-white mb-1">La Taquería Poblana</h2>
+            <div class="mb-6">
+                <h2 class="text-3xl font-serif font-bold text-white mb-1">La Taquería Poblana</h2>
                 <p class="text-white/40 text-xs font-light tracking-widest uppercase">
                     Operando orgullosamente bajo la Norma 24
                 </p>
             </div>
 
-            <div class="flex gap-6">
+            <div class="flex gap-6 mb-8">
                 <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-accent hover:scale-110 transition-all duration-300">
                     <i class="fa-brands fa-instagram text-xl"></i>
                 </a>
@@ -210,11 +248,19 @@
                     <i class="fa-brands fa-whatsapp text-xl"></i>
                 </a>
             </div>
+
+            <div class="w-full mt-8 pt-8 border-t border-white/10 text-brand-muted/80 text-sm flex flex-col sm:flex-row flex-wrap justify-center gap-x-8 gap-y-2">
+                <div><span class="font-semibold text-white/70">Alumno:</span> Saúl Mino Cabrera</div>
+                <div><span class="font-semibold text-white/70">Matrícula:</span> 202047334</div>
+                <div><span class="font-semibold text-white/70">Carrera:</span> Licenciatura en Ciencias de la Computación</div>
+                <div><span class="font-semibold text-white/70">Materia:</span> Aplicaciones Web</div>
+                <div><span class="font-semibold text-white/70">Profesor:</span> Samantha Acosta Ruiz</div>
+            </div>
             
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-white/10 text-center text-white/40 text-sm font-light">
-            &copy; 2026 La Taquería Poblana. Todos los derechos reservados.
+            <div class="mt-12 text-white/30 text-xs font-light">
+                © 2026 La Taquería Poblana. Todos los derechos reservados.
+            </div>
+            
         </div>
     </footer>
 
