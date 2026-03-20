@@ -4,6 +4,8 @@ Bienvenido al repositorio de **La Taquería Poblana**, un proyecto de desarrollo
 
 Este proyecto fue desarrollado cumpliendo los lineamientos de la **Norma 24** para garantizar los más altos estándares de calidad en su estructura y presentación.
 
+**pagina web** : https://saulminoc.github.io/restaurant-aw/restaurante.html
+
 ## 🚀 Características Principales
 
 * **Diseño 100% Responsivo:** Se adapta perfectamente a dispositivos móviles, tablets y pantallas de escritorio.
@@ -29,5 +31,5 @@ Como es un proyecto estático optimizado, toda la estructura se mantiene simple 
 
 ```text
 /
-├── index.html       # Archivo principal con toda la estructura y diseño
+├── restaurante.html       # Archivo principal con toda la estructura y diseño
 └── README.md        # Documentación del proyecto
