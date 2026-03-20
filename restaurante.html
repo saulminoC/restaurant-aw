@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Taquería Poblana | Auténtico Sabor</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a1a1a',
+                            light: '#fdfbf7',
+                            accent: '#c05621',
+                            muted: '#8c8b89'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-brand-light/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-brand-accent">La Taquería.</a>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold text-brand-dark/70">
+                <a href="#historia" class="hover:text-brand-accent transition-colors">Historia</a>
+                <a href="#menu" class="hover:text-brand-accent transition-colors">Menú</a>
+                <a href="#galeria" class="hover:text-brand-accent transition-colors">Galería</a>
+                <a href="#ubicacion" class="hover:text-brand-accent transition-colors">Ubicación</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b" alt="Tacos de fondo" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center mt-16">
+            <span class="uppercase tracking-[0.3em] text-white/80 text-sm mb-4 font-semibold"><i class="fa-solid fa-fire mr-2 text-brand-accent"></i>Tradición Viva</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+                La Taquería Poblana
+            </h1>
+            <p class="text-lg md:text-xl text-white/90 font-light max-w-2xl leading-relaxed mb-8">
+                El verdadero sabor de las calles de Puebla, llevado a tu mesa con ingredientes frescos y pasión por la cocina mexicana.
+            </p>
+            <a href="#menu" class="px-8 py-4 bg-brand-accent text-white rounded-full font-medium tracking-wide hover:bg-[#a0471b] transition-all duration-300 transform hover:-translate-y-1 shadow-xl flex items-center gap-3">
+                <i class="fa-solid fa-utensils"></i> Descubre el Menú
+            </a>
+        </div>
+    </header>
+
+    <section id="historia" class="max-w-7xl mx-auto px-6 py-24 text-center">
+        <h2 class="text-4xl font-serif font-bold text-brand-dark mb-6">Nuestra Pasión</h2>
+        <p class="max-w-3xl mx-auto text-brand-muted text-lg leading-relaxed mb-12">
+            Nacimos con la idea de preservar las recetas de las abuelas. Cada taco que servimos es un homenaje a la gastronomía de Puebla. Seleccionamos nuestras carnes diariamente y preparamos nuestras salsas en molcajete para garantizar una experiencia inigualable.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6">
+                <i class="fa-solid fa-leaf text-4xl text-brand-accent mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Ingredientes Frescos</h3>
+                <p class="text-brand-muted">Compramos localmente todos los días.</p>
+            </div>
+            <div class="p-6">
+                <i class="fa-solid fa-pepper-hot text-4xl text-brand-accent mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Salsas Caseras</h3>
+                <p class="text-brand-muted">Hechas a mano con chiles seleccionados.</p>
+            </div>
+            <div class="p-6">
+                <i class="fa-solid fa-clock text-4xl text-brand-accent mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Atención Rápida</h3>
+                <p class="text-brand-muted">Calidad sin hacerte esperar horas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="bg-[#f2efe9] py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-brand-dark mb-4">Nuestra Carta</h2>
+                <p class="text-brand-muted">Los clásicos que nunca fallan.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+                <div class="space-y-8">
+                    <div class="group flex justify-between items-start border-b border-brand-dark/10 pb-6 hover:border-brand-accent transition-colors duration-300">
+                        <div class="pr-8">
+                            <h3 class="text-2xl font-serif font-semibold text-brand-dark mb-2 group-hover:text-brand-accent transition-colors">Tacos Árabes</h3>
+                            <p class="text-brand-muted font-light leading-relaxed text-sm">Carne marinada en trompo, tortilla de harina estilo pan árabe, salsa chipotle.</p>
+                        </div>
+                        <span class="text-xl font-bold text-brand-accent">$25</span>
+                    </div>
+                    <div class="group flex justify-between items-start border-b border-brand-dark/10 pb-6 hover:border-brand-accent transition-colors duration-300">
+                        <div class="pr-8">
+                            <h3 class="text-2xl font-serif font-semibold text-brand-dark mb-2 group-hover:text-brand-accent transition-colors">Cemitas Tradicionales</h3>
+                            <p class="text-brand-muted font-light leading-relaxed text-sm">Pan artesanal, milanesa crujiente, quesillo, pápalo fresco y aguacate.</p>
+                        </div>
+                        <span class="text-xl font-bold text-brand-accent">$85</span>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="group flex justify-between items-start border-b border-brand-dark/10 pb-6 hover:border-brand-accent transition-colors duration-300">
+                        <div class="pr-8">
+                            <h3 class="text-2xl font-serif font-semibold text-brand-dark mb-2 group-hover:text-brand-accent transition-colors">Chalupas Poblanas (Orden)</h3>
+                            <p class="text-brand-muted font-light leading-relaxed text-sm">Tortillas doradas en manteca, salsa verde/roja, cebolla y carne deshebrada.</p>
+                        </div>
+                        <span class="text-xl font-bold text-brand-accent">$45</span>
+                    </div>
+                    <div class="group flex justify-between items-start border-b border-brand-dark/10 pb-6 hover:border-brand-accent transition-colors duration-300">
+                        <div class="pr-8">
+                            <h3 class="text-2xl font-serif font-semibold text-brand-dark mb-2 group-hover:text-brand-accent transition-colors">Agua de Horchata (Litro)</h3>
+                            <p class="text-brand-muted font-light leading-relaxed text-sm">Receta secreta con arroz, vainilla, leche y un toque de canela espolvoreada.</p>
+                        </div>
+                        <span class="text-xl font-bold text-brand-accent">$35</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-24 max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-serif font-bold text-brand-dark mb-10 text-center">Del Comal a tu Mesa</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="overflow-hidden rounded-2xl shadow-lg relative group h-64 md:h-80">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Platillo 1" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="overflow-hidden rounded-2xl shadow-lg relative group h-64 md:h-80">
+                <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f" alt="Tacos 2" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="bg-brand-dark text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-10">
+                <div>
+                    <h2 class="text-4xl font-serif font-bold mb-6">Encuéntranos</h2>
+                    <p class="text-white/70 text-lg mb-8">Estamos ubicados en el corazón gastronómico de la ciudad, listos para recibirte.</p>
+                    
+                    <div class="flex items-start gap-4 mb-6">
+                        <i class="fa-solid fa-location-dot text-2xl text-brand-accent mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-xl">Dirección</h4>
+                            <p class="text-white/60">Centro Histórico, Puebla, Pue. México.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-clock text-2xl text-brand-accent mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">Horario de Servicio</h4>
+                            <p class="text-white/60">Lunes a Jueves: <span class="text-white">12:00 pm - 10:00 pm</span></p>
+                            <p class="text-white/60">Viernes a Domingo: <span class="text-white">12:00 pm - 12:00 am</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15086.0827103215!2d-98.20464225883803!3d19.040854405396555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0e0b3c2c589%3A0x6b4028ce2fbaec27!2sZ%C3%B3calo%20de%20Puebla!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#111] text-brand-light py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            
+            <div class="mb-6 md:mb-0">
+                <h2 class="text-2xl font-serif font-bold text-white mb-1">La Taquería Poblana</h2>
+                <p class="text-white/40 text-xs font-light tracking-widest uppercase">
+                    Operando orgullosamente bajo la Norma 24
+                </p>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-accent hover:scale-110 transition-all duration-300">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-accent hover:scale-110 transition-all duration-300">
+                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-green-500 hover:scale-110 transition-all duration-300">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-white/10 text-center text-white/40 text-sm font-light">
+            &copy; 2026 La Taquería Poblana. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
